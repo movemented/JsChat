@@ -1,3 +1,3 @@
 # JsChat
 Live Chatroom and Texting Service
-Created By movemented & GrantDev
+<p1> Created By movemented & GrantDev </p1>
