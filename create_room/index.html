@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Room</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<h1> Room Code:  </h1>
+ <div id="output"></div>
+ <script type="py" src="roomcode.py" config="pyscript.json"></script>
+ 
+ <body>
+    
+    <h1 id="code"></h1>
+    <script> // Get Random Interger 100k to 900k
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        var code = getRandomInt(100000, 999999);
+        document.getElementById('code').textContent = code;
+    </script>
+   
+   
+   
+    <a href= ../index.html style="text-align: center; color: white; font-size: larger; position: fixed; bottom: 100px; transform: translateX(-30px); ">Go Back</a>
+
+
+</body>
+    
+</html>
