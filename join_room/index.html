@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Room</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../create_room/index.html">
+
+</head>
+<h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; text-align: center " Room>Join Room</h1>
+<div>
+
+    <input type="text" id="" name="" placeholder="Enter Room Code" size="50"  >
+
+
+    </input>
+
+    
+</div>
+
+<script>
+    function Alert() {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var doc = xhr.responseXML;
+                        var roomCode = doc.getElementById("roomCode").value;
+                        alertRoomCode(roomCode);
+                    }
+                };
+                xhr.open("GET", "../create_room/index.html", true);
+                xhr.responseType = "document";
+                xhr.send();
+            }
+
+            function alertRoomCode(roomCode) {
+                if (roomCode === undefined || roomCode === '') {
+                    alert("Room Not Found!");
+                } 
+                else if (roomCode !== '') {
+                    alert("Room Found! The room code is: " + roomCode);
+                }
+            }
+</script>
+
+
+<nav>
+    <ul>
+        <li><a href="../home_page/index.html">Home</a></li>
+        <li><a href="../about_us/index.html">About Us</a></li>
+        <li><a href="../login/index.html">Login</a></li>
+        <li><a href="../create_account/index.html">Create Account</a></li>
+    </ul>
+</nav>
+
+
+
+<body>
+ 
+
+<button onclick="Alert()">Join</button>
+    
+
+
+
+
+</body>
+<a href= ../home_page/index.html style="text-align: center; color: white; font-size: larger; position: fixed; bottom: 100px; transform: translateX(-100px); font-family: Arial, Helvetica, sans-serif;">Go Back</a>
+</html>

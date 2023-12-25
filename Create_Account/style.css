@@ -1,0 +1,39 @@
+body {
+
+
+
+    background-color: darkslateblue;
+    text-align: center;
+}
+
+nav {
+    position: relative;
+    top: -185px;
+    background-color: darkslateblue;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+    transform: translateY(-90px);
+
+}
+
+
+
+
+nav ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    background-color: plum;
+}

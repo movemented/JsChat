@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <h1 style="text-align: center; color: whitesmoke;">Edit Profile</h1>
+
+
+    <nav>
+        <ul>
+            <li><a href="../home_page/index.html">Home</a></li>
+        </ul>
+    </nav>
+
+</head>
+
+<body>
+    
+    
+    <form id="profileForm">
+        <label for="username">Enter your username:</label>
+        <input type="text" id="usernameInput" name="username" required><br>
+
+        <label for="profileImage">Upload a profile picture:</label>
+        <input style=" position: fixed;top: 110px; transform: translateX(-80px);" type="file" id="profileImageInput" accept="image/*" onchange="previewImage()"><br>
+
+        <img id="preview" alt="">
+
+        <input style=' position: fixed; transform: translateX(-40px); position: fixed; top: 720px;' type="button" value="Save Profile" onclick="saveProfile()">
+        <div id="savedData"></div>
+    </form>
+
+    <script>
+        function previewImage() {
+            var preview = document.getElementById('preview');
+            var fileInput = document.getElementById('profileImageInput');
+            var file = fileInput.files[0];
+
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+
+        function saveProfile() {
+            var username = document.getElementById('usernameInput').value;
+            var imageData = document.getElementById('preview').src;
+
+            // For demonstration purposes, just display the saved data
+            var savedDataContainer = document.getElementById('savedData');
+            savedDataContainer.innerHTML = `
+                <p>Username: ${username}</p>
+                <p>Profile Picture:</p>
+                <img src="${imageData}" alt="Saved Profile Picture" style="max-width: 300px;">
+            `;
+        }
+    </script>
+    
+
+
+</body> 
+
+
+
+
+<a href= ../home_page/index.html style="text-align: center; color: white; font-size: larger; position: fixed; bottom: 100px; transform: translateX(820px); font-family: Arial, Helvetica, sans-serif;">Go Back</a>
+
+</body>
+
+
+</html>
